@@ -1,16 +1,25 @@
 const express = require('express')
-const http = require('http');
-port = 3000;
+const exphbs = require('express-handlebars')
 
-function handle(request, response) {
+const app = express()
 
-    response.end("<h1>Bem vindo ao node com Express!!!!</h1>")
+const conn = require('./connSequelize')
 
-}
-const server = http.createServer(handle);
+app.engine('handlebars', exphbs.engine())
+app.set('view engine', 'handlebars')
 
-server.listen(3000, (req, res) =>{
+app.use(
+  express.urlencoded({
+    extended: true,
+  }),
+)
 
-   console.log("Servidor rodando na porta 3000")
+app.use(express.json())
 
-});
+app.use(express.static('public'))
+
+app.get('/', function (req, res) {
+  res.render('home')
+})
+
+app.listen(3000)
