@@ -5,11 +5,11 @@ const sequelize = new Sequelize('sequelize_udemy', 'root', '', {
     dialect: 'mysql'  /* | 'mariadb' | 'postgres' | 'mssql' */
   });
 
-  try {
-     sequelize.authenticate();
-    console.log('Connection has been established Successfully.');
-  } catch (error) {
-    console.error('Unable to connect to the database:', error);
-  }
+//   try {
+//      sequelize.authenticate();
+//     console.log('Connection has been established Successfully.');
+//   } catch (error) {
+//     console.error('Unable to connect to the database:', error);
+//   }
 
   module.exports = sequelize
