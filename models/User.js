@@ -16,7 +16,8 @@ const User = database.define ('User',  {
      firstName:{
 
         type: DataTypes.STRING,
-        
+        allowNull: true,
+        allowEmpty: false,
 
      },
 
