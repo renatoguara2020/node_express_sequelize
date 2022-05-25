@@ -16,16 +16,10 @@ const User = database.define ('User',  {
      firstName:{
 
         type: DataTypes.STRING,
-        allow_empty: false,
-        allowNull: false,
+        
 
      },
 
-     userName:{
-         type: DataTypes.STRING,
-         allow_empty: false,
-         allowNull: false,
-     }, 
 
      occupation:{
 
@@ -39,7 +33,13 @@ const User = database.define ('User',  {
         type: DataTypes.STRING,
         allowNull: false,
         isEmpty: false,
-     }
+     },
+
+     userName:{
+        type: DataTypes.STRING,
+        allow_empty: false,
+        allowNull: false,
+    }, 
 
 })
 
