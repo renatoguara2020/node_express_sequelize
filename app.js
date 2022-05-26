@@ -5,6 +5,7 @@ const app = express()
 
 const conn = require('./connSequelize')
 const Users = require('./models/User')
+const Address = require('./models/Address');
 
 app.engine('handlebars', exphbs.engine())
 app.set('view engine', 'handlebars')
@@ -23,8 +24,9 @@ app.get('/', async  (req, res) => {
 
    const users = await Users.findAll({raw:true})
 
-   console.log(users)
+   
   res.render('home', {users:users})
+  console.log(users)
 })
 
 app.get('/users/create' , (req, res) => {
